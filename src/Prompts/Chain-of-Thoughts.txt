@@ -1,0 +1,103 @@
+Uma prova da OBI, que é composta por uma série de questões de múltipla escolha.
+
+Cada questão possui a seguinte estrutura: "Cenário", "Regras" e "Perguntas".
+O "Cenário" apresenta uma história que serve de contexto para pergunta; Contém as variáveis que serão utilizadas na pergunta (locais, eventos, objetos, etc). Um mesmo cenário pode ser compartilhado por mais de uma pergunta, nesse caso, o cenário possuirá um título, que chamaremos de "Nome do Cenário".
+As "Regras" apresentam um conjunto de proposições que definem relações entre as variáveis (existência, posição, valor verdade), podendo incluir imagens como exemplo.
+As "Perguntas" apresentam um conjunto de perguntas de múltipla escolha relacionadas ao cenário e às regras, uma pergunta pode ignorar ou adicionar uma "Regra" e essa modificação é válida somente nela. Elas podem ser identificadas por um numeral na frente da pergunta ou pelo prefixo "Questão" seguido de um número.
+
+Por exemplo, a questão com "Nome de Cenário" Sorveteria, possui o seguinte "Cenário": "Para montar seu pote de sorvete você precisa escolher cinco dos sete sabores disponíveis: T, U, V, W, X, Y e Z. As seguintes condições se aplicam a sua escolha:", "Regras": "Cada sabor pode ser escolhido no máximo uma vez; W e Z deve ser escolhido, mas não ambos; Se Y é escolhido então V também deve ser escolhido; Se U é escolhido então W não pode ser escolhido" e "Perguntas": "1. Se U for escolhido então qual deve, com certeza, ser também escolhido? 2. Se T, U e X foram escolhidos, quais devem ser os outros dois?"
+
+As questões podem ser classificadas em “Classes”, que determinam a utilização das variáveis apresentadas nos “Cenários”, cada classe possui um conjunto de “Tipos” que especificam o tratamento das “Regras” e variáveis do “Cenário”.
+
+A questão usada de exemplo, Sorveteria, é classificada como "Agrupamento - 1 grupo", então toda classificação deve ser no formato "Classe - Tipo"
+
+Ordenação: Envolve posicionar elementos em uma sequência específica relativa a algum sistema. É possível encontrar no cenário de questões dessa classe as palavras-chaves: *listar*, *classificar*, *sequência*. Os tipos dessa classe são:
+   - Linear: Lidam com uma única estrutura linear; Não possui palavras-chaves, mas apresentam até dois conjuntos de variáveis que devem ser considerados para a ordenação.
+     Exemplo de Questão: "Empresas de busca na internet, como Bing e Google, classificam as páginas da Internet de acordo com a sua 'popularidade'. A popularidade de uma página X pode ser medida por exemplo pelo número de referências (links) de todas as outras páginas para X. Estamos interessados em seis páginas – P, Q, R, S, T e U –, que têm popularidades diferentes entre si. As seguintes relações são conhecidas:
+P é mais popular do que Q ou R, mas não mais popular do que ambas.
+U é menos popular do que R.
+Se Q é menos popular do que R, então nem S nem U são mais populares do que T.
+Se Q é mais popular do que R, então S é mais popular do que ambas T e U."
+
+Entrada: Analise "Cenário" e "Regras" acima, e classifique a questão.
+Resposta: No caso do Exemplo dado é necessário fazer uma lista linear das seis páginas(P, Q, R, S, T e U), assim estamos lidando com uma única estrutura linear, portanto a classificação é "Ordenação - Linear".
+
+   - Quadrática: Lidam com uma ou mais estruturas lineares sobrepostas, tipicamente que pode ser representada por uma matriz ou grade; Não possui palavras-chaves, mas apresentam três ou mais conjuntos de variáveis que devem ser levados em consideração para a ordenação.
+     Exemplo de Questão: "O professor de Química está organizando um ciclo de palestras no próximo sábado. São oito palestras ao todo, apresentadas por oito empresas diferentes: F, L, M, O, R, T, X e Z. As palestras serão organizadas em dois grupos de quatros palestras. As palestras de cada grupo serão apresentadas em sequencia, uma de cada vez; um grupo fará as apresentações no Auditório 1 e outro no grupo no Auditório 2. Todas as palestras terão a mesma duração, e enquanto uma palestra estiver sendo apresentada no Auditório 1, uma outra estará sendo apresentada no Auditório 2, com mesmos horários de início e fim. A programação deve ainda obedecer as seguintes condições:
+A palestra F deve ocorrer no mesmo horário que a palestra M;
+A palestra L deve ocorrer no mesmo horário que a palestra O;
+A palestra R deve ocorrer no mesmo auditório que a palestra F;
+A palestra T deve ocorrer no mesmo auditório que a palestra O;
+A palestra X deve ser a segunda a ser apresentada no Auditório 2.".
+
+Entrada: Analise "Cenário" e "Regras" acima, e classifique a questão.
+Resposta: No caso do Exemplo dado é necessário fazer uma lista de ordem de apresentação considerando a sequência das palestras(1, 2, 3 e 4) em dois auditórios(A1 e A2) e as palestras a serem apresentadas(F, L, M, O, R, T, X e Z), esse conjunto de regras cria uma ordem com relação tanto ao auditório como a sequência de apresentação, assim temos duas estruturas lineares sobrepostas e portanto a classificação é "Ordenação - Quadrática".
+
+   - Circular:  Lidam com uma estrutura em que as extremidades se encontram; É possível encontrar no cenário de questões desse tipo as palavras-chaves: *redonda*, *circular*, *roda*, *circunferência*, *circuito*.
+     Exemplo de Questão: "O time de futsal da escola, formado por Adão, Beto, Caio, Deco e Edu, foi campeão no Torneio da Cidade e o técnico levou os jogadores para comemorar numa pizzaria. Os cinco jogadores sentam-se ao redor de uma mesa redonda, que acomoda exatamente cinco pessoas. Adão e Edu sentam-se um ao lado do outro. Beto e Caio não se sentam um ao lado do outro. Os dois jogadores sentados ao lado de Beto são:"
+
+Entrada: Analise "Cenário" e "Regras" acima, e classifique a questão.
+Resposta: No caso do Exemplo dado é necessário fazer uma lista de disposição de jogadores em uma mesa redonda, assim estamos lidando com uma estrutura em que existe encontro de extremidades, portanto a classificação é "Ordenação - Circular".
+
+   - Livre: Lidam com uma estrutura não definida ou que, caso não possa ser representada por nenhuma das anteriores, se assemelha a um grafo; Não possui palavras-chaves, mas normalmente indica que as variáveis tem mais que duas ou três relações entre si.
+     Exemplo de Questão: "Numa epidemia por um novo tipo de vírus, uma das tarefas mais importantes dos médicos infectologistas é determinar quem foi o Paciente Zero, ou seja, a pessoa que foi infectada primeiro pelo novo vírus. O Paciente Zero geralmente é infectado por um animal (morcego, por exemplo). Dizemos que a pessoa X foi infectada diretamente pela pessoa Y quando X teve contato com Y. Dizemos que X foi infectada indiretamente por Y quando X não teve contato com Y, mas teve contato com uma pessoa que Y infectou, direta ou indiretamente. Numa recente epidemia no
+reino da Nlogônia, os médicos determinaram que: Rui foi infectado diretamente por Luís; Saulo infectou diretamente Tânia; Luís infectou diretamente Pedro e Rui; Maria foi infectada diretamente por Saulo; Saulo foi infectado diretamente por Luís; Nara infectou diretamente Luís."
+
+Entrada: Analise "Cenário" e "Regras" acima, e classifique a questão.
+Resposta: No caso do Exemplo dado é necessário fazer uma lista de relacionamento de infecção onde o paciente zero tem relação com múltiplas pessoas, assim estamos lidando com uma estrutura que pode só pode ser representada como um grafo, portanto a classificação é "Ordenação - Livre".
+
+Agrupamento: Divide elementos em grupos com base em características ou condições específicas. É possível encontrar no cenário de questões dessa classe as palavras-chaves: *escolher*, *selecionar*, *separar*, *agrupar*. Os tipos dessa classe são:
+   - 1 Grupo: Elementos pertencem a um único grupo com regras condicionais;
+	Exemplo de Questão: "O professor de educação física quer montar a seleção de boliche da escola. Para ter uma seleção forte e diversificada, o professor quer que haja na equipe ao menos um jogador canhoto (que joga com a mão esquerda) e um jogador destro (que joga com a mão direita). Os jogadores canhotos são A, B, C, D e F, e os destros são
+Q, R, S e Z. A equipe selecionada deve ter no mínimo três e no máximo seis jogadores. Além disso o professor deve obedecer às seguintes restrições:
+Se B é selecionado, então R deve ser também selecionado.
+S não é selecionado se R é selecionado.
+Se Z não é selecionado, então B deve ser selecionado.
+A ou Z devem selecionados, mas os dois não podem ser selecionados juntos.
+R não é selecionado a menos que F seja selecionado."
+
+Entrada: Analise "Cenário" e "Regras" acima, e classifique a questão.
+Resposta: No caso do Exemplo dado é necessário fazer uma divisão de jogadores em uma única equipe, assim estamos lidando com uma divisão de elementos em um único grupo, portanto a classificação é "Agrupamento - 1 Grupo".
+
+   - N-Grupos: Elementos são divididos em dois ou mais grupos, frequentemente envolvendo regras de combinação e posição.
+	Exemplo de Questão: "Três policiais – Rita, Sílvia e Tina – vão treinar cinco cães farejadores – Aladim, Bidu, Cacau, Dragão e Espoleta. Cada policial treina pelo menos um cão, e cada cão será treinado por exatamente uma policial. A definição de qual policial treina cada cão deve seguir as seguintes restrições:
+Espoleta e Dragão são treinados pela mesma policial.
+Cacau e Dragão não são treinados pela mesma policial.
+Se Tina treina Aladim, Tina também treina Bidu.
+Cacau é treinado por Rita."
+
+Entrada: Analise "Cenário" e "Regras" acima, e classifique a questão.
+Resposta: No caso do Exemplo dado é necessário fazer uma divisão de 5 cães farejadores para 3 policiais, assim estamos lidando com uma divisão de elementos em múltiplos grupo, portanto a classificação é "Agrupamento - N-Grupos".
+
+Outros: Inclui questões não contempladas nas classes anteriores, que podem combinar elementos de ordenação e agrupamento, ou que requerem cálculos matemáticos ou leitura e resolução de diagramas. Os tipos dessa classe são:
+   - Cálculo: Dependem exclusivamente de um cálculo envolvendo as variáveis do “Cenário”;
+	Exemplo de Questão: "Na Nlogônia, as cédulas de dinheiro são de $1,00, $3,00, $9,00, $27,00, e $81,00. Num dado momento, um vendedor possui apenas cinco cédulas, uma de cada um dos valores das cédulas existentes na Nlogônia. Qual dos valores abaixo não é possível ser dado como troco por esse vendedor?"
+
+Entrada: Analise "Cenário" e "Regras" acima, e classifique a questão.
+Resposta: No caso do Exemplo dado é necessário fazer um conta com os valores de cédulas disponíveis para chegar no valor do troco esperado, assim estamos lidando com um cálculo matemático, portanto a classificação é "Outro - Cálculo".
+
+   - Grupos Ordenados: Combinam as propriedades de Ordenação com as de Agrupamento;
+	Exemplo de Questão: "Numa sala de aula existem cinco cadeiras, numeradas de 1 a 5, numa fileira junto à janela e sete alunos que ali desejam sentar: Douglas, Eduardo, Gustavo, Henrique, João, Karen e o Leonardo. A professora resolveu que somente quatro alunos vão ocupar as cadeiras. Cada aluno senta em somente uma cadeira e restará uma vazia. Somente cadeiras com números consecutivos são consideradas adjacentes. As seguinte condições também influenciam a decisão da professora:
+Se Douglas for selecionado então ele deve ficar na cadeira 1.
+Se Leonardo for selecionado ele deve ficar na cadeira 2.
+Se Karen for selecionada ela deve ficar na cadeira 4.
+Se Eduardo ou Gustavo for selecionado então ambos devem ser selecionados e colocados em
+cadeiras adjacentes.
+Se Eduardo é selecionado então Leonardo também deve ser.
+Henrique deve ser selecionado ou Karen deve ser selecionada mas não ambos."
+
+Entrada: Analise "Cenário" e "Regras" acima, e classifique a questão.
+Resposta: No caso do Exemplo dado é necessário fazer um agrupamento de 5 dos 7 alunos disponíveis e depois organizar os 5 alunos escolhidos em uma lista linear de cadeiras, assim estamos lidando com um agrupamento e ordenação, portanto a classificação é "Outro - Grupos Ordenados".
+
+   - Definição: Apresentam regras e definições de algum conceito que deve ser seguido para encontrar a solução, depende também da intuição e interpretação do leitor.
+	Exemplo de Questão: "RC100 é um robô que pode mover-se nas quatro direções, Norte, Sul, Leste e Oeste. O RC100 é comandado utilizando uma linguagem de programação que tem apenas cinco comandos:
+N : ao receber esse comando, o robô move-se 10 metros na direção Norte;
+S: ao receber esse comando, o robô move-se 10 metros na direção Sul;
+L: ao receber esse comando, o robô move-se 10 metros na direção Leste;
+O: ao receber esse comando, o robô move-se 10 metros na direção Oeste;
+C : ao receber esse comando, o robô permanece no mesmo local mas cava um buraco e recolhe
+amostras do solo;
+Após receber e executar um comando, o robô permanece parado até receber o próximo comando."
+
+Entrada: Analise "Cenário" e "Regras" acima, e classifique a questão.
+Resposta: No caso do Exemplo dado é necessário seguir instruções de um robô apresentadas e definidas nas regras, como não envolve nenhum tipo de ordenação, agrupamento, ou cálculo e é necessário a intuição do leitor para desvendar o que fazer com essas instruções, estamos lidando com um agrupamento e ordenação, portanto a classificação é "Outro - Definição".

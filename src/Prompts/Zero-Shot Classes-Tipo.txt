@@ -1,0 +1,29 @@
+Uma prova da OBI, que é composta por uma série de questões de múltipla escolha.
+
+Cada questão possuí a seguinte estrutura: "Cenário", "Regras" e "Perguntas".
+O "Cenário" apresenta uma história que serve de contexto para pergunta; Contém as variáveis que serão utilizadas na pergunta (locais, eventos, objetos, etc). Um mesmo cenário pode ser compartilhado por mais de uma pergunta, nesse caso, o cenário possuirá um título, que chamaremos de "Nome do Cenário".
+As "Regras" apresentam um conjunto de proposições que definem relações entre as variáveis (existência, posição, valor verdade), podendo incluir imagens como exemplo.
+As "Perguntas" apresentam um conjunto de perguntas de múltipla escolha relacionadas ao cenário e às regras, uma pergunta pode ignorar ou adicionar uma "Regra" e essa modificação é valida somente nela. Elas podem ser identificadas por um numeral na frente da pergunta ou pelo prefixo "Questão" seguido de um número.
+
+Por exemplo, a questão com "Nome de Cenário" Sorveteria, possui o seguinte "Cenário": "Para montar seu pote de sorvete você precisa escolher cinco dos sete sabores disponíveis: T, U, V, W, X, Y e Z. As seguintes condições se aplicam a sua escolha:", "Regras": "Cada sabor pode ser escolhido no máximo uma vez; W e Z deve ser escolhido, mas não ambos; Se Y é escolhido então V também deve ser escolhido; Se U é escolhido então W não pode ser escolhido" e "Perguntas": "1. Se U for escolhido então qual deve, com certeza, ser também escolhido? 2. Se T, U e X foram escolhidos, quais devem ser os outros dois?"
+
+As questões podem ser classificadas em “Classes”, que determinam a utilização das variáveis apresentadas nos “Cenários”, cada classe possui um conjunto de “Tipos” que especificam o tratamento das “Regras” e variáveis do “Cenário”.
+
+Ordenação: Envolve posicionar elementos em uma sequência específica relativa a algum sistema. Os tipos dessa classe são:
+   - Linear: Lidam com uma única estrutura linear;
+     Exemplo: Ordenar itens em uma linha
+   - Quadrática: Lidam com uma ou mais estruturas lineares sobrepostas;
+     Exemplo: Ordenar itens em duas sequências dependentes, onde levamos em consideração a sequência que pertence e a posição que ocupa.
+   - Circular:  Lidam com uma estrutura em que as extremidades se encontram;
+     Exemplo: Ordenar itens em uma roda,
+   - Livre: Lidam com uma estrutura não definida ou que se assemelha a um grafo.
+     Exemplo: Ordenar itens que representam cidades em um mapa.
+Agrupamento: Divide elementos em grupos com base em características ou condições específicas. Os tipos dessa classe são:
+   - 1 Grupo: Elementos pertencem a um único grupo com regras condicionais;
+   - N-Grupos: Elementos são divididos em dois ou mais grupos, frequentemente envolvendo regras de combinação e posição.
+Outros: Inclui questões não se enquadram nas classes anteriores, que podem combinar elementos de ordenação e agrupamento, ou que requerem cálculos matemáticos ou leitura e resolução de diagramas. Essa classe só deve ser utilizada quando a questão não se enquadrar em nenhuma das classes anteriores. Os tipos dessa classe são:
+   - Cálculo: Dependem exclusivamente de um cálculo envolvendo as variáveis do “Cenário”;
+   - Grupos Ordenados: Combinam as propriedades de Ordenação com as de Agrupamento;
+   - Definição: Apresenta algum conjunto de regras lógicas que devem ser seguidas para encontrar a solução.
+
+A questão usada de exemplo, Sorveteria, é classificada como "Agrupamento - 1 grupo", então toda classificação deve ser no formato "Classe - Tipo"

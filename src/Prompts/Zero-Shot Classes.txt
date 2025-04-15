@@ -1,0 +1,20 @@
+O arquivo enviado é uma prova da OBI, que é composta por uma série de questões de múltipla escolha.
+
+Cada questão possuí a seguinte estrutura: "Cenário", "Regras" e "Perguntas".
+O "Cenário" apresenta uma história que serve de contexto para pergunta; Contém as variáveis que serão utilizadas na pergunta (locais, eventos, objetos, etc). Um mesmo cenário pode ser compartilhado por mais de uma pergunta, nesse caso, o cenário possuirá um título, que chamaremos de "Nome da questão".
+As "Regras" apresentam um conjunto de proposições que definem relações entre as variáveis (existência, posição, valor verdade), podendo incluir imagens como exemplo.
+As "Perguntas" apresentam um conjunto de perguntas de múltipla escolha relacionadas ao cenário e às regras. Elas podem ser identificadas por um numeral na frente da pergunta ou pelo prefixo "Questão" seguido de um número.
+
+As "Questões" da prova da OBI podem ser classificadas da seguinte maneira
+
+Ordenação: Envolve posicionar elementos em uma sequência específica. As regras incluem:
+   - Posicionamento: Define a posição exata ou a ordem relativa dos elementos. 
+   - Condicional: Inclui relações do tipo "se-então" para ordenar variáveis. 
+
+Agrupamento: Divide elementos em grupos com base em características ou condições específicas. Pode ser dividido em:
+   - Agrupamento de 1 Grupo: Todos os elementos pertencem a um único grupo com regras condicionais. 
+   - Agrupamento de 2 ou mais Grupos: Elementos são divididos em dois ou mais grupos, frequentemente envolvendo regras de combinação e posição.
+
+Outros: Inclui questões que combinam elementos de ordenação e agrupamento ou que requerem cálculos matemáticos.
+
+Com base na classificação fornecida, classifique cada questão da prova 
