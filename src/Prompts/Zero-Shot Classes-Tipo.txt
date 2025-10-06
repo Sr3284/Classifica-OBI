@@ -11,13 +11,9 @@ As questões podem ser classificadas em “Classes”, que determinam a utiliza�
 
 Ordenação: Envolve posicionar elementos em uma sequência específica relativa a algum sistema. Os tipos dessa classe são:
    - Linear: Lidam com uma única estrutura linear;
-     Exemplo: Ordenar itens em uma linha
    - Quadrática: Lidam com uma ou mais estruturas lineares sobrepostas;
-     Exemplo: Ordenar itens em duas sequências dependentes, onde levamos em consideração a sequência que pertence e a posição que ocupa.
    - Circular:  Lidam com uma estrutura em que as extremidades se encontram;
-     Exemplo: Ordenar itens em uma roda,
    - Livre: Lidam com uma estrutura não definida ou que se assemelha a um grafo.
-     Exemplo: Ordenar itens que representam cidades em um mapa.
 Agrupamento: Divide elementos em grupos com base em características ou condições específicas. Os tipos dessa classe são:
    - 1 Grupo: Elementos pertencem a um único grupo com regras condicionais;
    - N-Grupos: Elementos são divididos em dois ou mais grupos, frequentemente envolvendo regras de combinação e posição.
@@ -25,5 +21,6 @@ Outros: Inclui questões não se enquadram nas classes anteriores, que podem com
    - Cálculo: Dependem exclusivamente de um cálculo envolvendo as variáveis do “Cenário”;
    - Grupos Ordenados: Combinam as propriedades de Ordenação com as de Agrupamento;
    - Definição: Apresenta algum conjunto de regras lógicas que devem ser seguidas para encontrar a solução.
+
 
 A questão usada de exemplo, Sorveteria, é classificada como "Agrupamento - 1 grupo", então toda classificação deve ser no formato "Classe - Tipo"
