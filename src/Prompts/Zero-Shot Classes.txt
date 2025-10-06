@@ -7,14 +7,11 @@ As "Perguntas" apresentam um conjunto de perguntas de múltipla escolha relacion
 
 As "Questões" da prova da OBI podem ser classificadas da seguinte maneira
 
-Ordenação: Envolve posicionar elementos em uma sequência específica. As regras incluem:
-   - Posicionamento: Define a posição exata ou a ordem relativa dos elementos. 
-   - Condicional: Inclui relações do tipo "se-então" para ordenar variáveis. 
+Ordenação: Envolve posicionar elementos em uma sequência específica.
 
-Agrupamento: Divide elementos em grupos com base em características ou condições específicas. Pode ser dividido em:
-   - Agrupamento de 1 Grupo: Todos os elementos pertencem a um único grupo com regras condicionais. 
-   - Agrupamento de 2 ou mais Grupos: Elementos são divididos em dois ou mais grupos, frequentemente envolvendo regras de combinação e posição.
+Agrupamento: Divide elementos em grupos com base em características ou condições específicas.
 
 Outros: Inclui questões que combinam elementos de ordenação e agrupamento ou que requerem cálculos matemáticos.
+
 
 Com base na classificação fornecida, classifique cada questão da prova 
