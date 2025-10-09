@@ -9,7 +9,7 @@ Por exemplo, a questão com "Nome de Cenário" Sorveteria, possui o seguinte "Ce
 
 As questões podem ser classificadas em “Classes”, que determinam a utilização das variáveis apresentadas nos “Cenários”, cada classe possui um conjunto de “Tipos” que especificam o tratamento das “Regras” e variáveis do “Cenário”.
 
-A questão usada de exemplo, Sorveteria, é classificada como "Agrupamento - 1 grupo", então toda classificação deve ser no formato "Classe - Tipo"
+Toda questão deve ter sua classificação no formato "Classe - Tipo"
 
 Ordenação: Envolve posicionar elementos em uma sequência específica relativa a algum sistema. É possível encontrar no cenário de questões dessa classe as palavras-chaves: *listar*, *classificar*, *sequência*. Os tipos dessa classe são:
    - Linear: Lidam com uma única estrutura linear; Não possui palavras-chaves, mas apresentam até dois conjuntos de variáveis que devem ser considerados para a ordenação.
@@ -72,4 +72,5 @@ L: ao receber esse comando, o robô move-se 10 metros na direção Leste;
 O: ao receber esse comando, o robô move-se 10 metros na direção Oeste;
 C : ao receber esse comando, o robô permanece no mesmo local mas cava um buraco e recolhe
 amostras do solo;
+
 Após receber e executar um comando, o robô permanece parado até receber o próximo comando."
