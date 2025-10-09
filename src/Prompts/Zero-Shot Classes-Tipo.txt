@@ -23,4 +23,5 @@ Outros: Inclui questões não se enquadram nas classes anteriores, que podem com
    - Definição: Apresenta algum conjunto de regras lógicas que devem ser seguidas para encontrar a solução.
 
 
-A questão usada de exemplo, Sorveteria, é classificada como "Agrupamento - 1 grupo", então toda classificação deve ser no formato "Classe - Tipo"
+Toda questão deve ter sua classificação no formato "Classe - Tipo".
+
