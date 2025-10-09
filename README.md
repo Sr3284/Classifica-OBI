@@ -3,8 +3,8 @@
 Este repositório reúne todo o material referente ao nosso Trabalho de Conclusão de Curso (TCC), que investiga o uso de **técnicas de prompting** — especialmente *Chain-of-Thought (CoT)* — para a **classificação automática de questões da Olimpíada Brasileira de Informática (OBI)**.
 
 >  **Instituição:** Universidade Federal do Mato Grosso do Sul (UFMS)  
->  **Autor:** Rodrigo Seiti Koga Kikuta, Davi Queiroz Rodrigues  
->  **Orientadores:** Amaury Antonio de Castro Júnior  
+>  **Autores:** Rodrigo Seiti Koga Kikuta, Davi Queiroz Rodrigues  
+>  **Orientador:** Amaury Antonio de Castro Júnior  
 
 
 ---
@@ -12,7 +12,7 @@ Este repositório reúne todo o material referente ao nosso Trabalho de Conclus�
 ## Índice
 
 - [Artigo](Artigo/TCC.pdf)
-- [Slides]()
+- [Slides](Slides/TCC___Slides.pdf)
 - [Dados de Classificação](src/Classificações/)
 - [Prompts](src/Prompts/)
 - [Provas](src/Provas/)
