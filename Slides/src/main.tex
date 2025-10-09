@@ -255,6 +255,30 @@ Campo Grande - MS}
     \end{columns}   
 \end{frame}
 
+\begin{frame}{Distribuição das questões}
+    \begin{table}[h]
+    \centering
+    \label{tab:classes-tipos-periodos}
+    \begin{tabular}{|l|cc|cc|}
+    \hline
+    \textbf{Tipo} & \textbf{2003–2009} & \textbf{\%} &          \textbf{2023–2024} & \textbf{\%} \\
+    \hline
+    Ord. – Linear       & 88    & 19,6  & 155   & 34,4  \\
+    Ord. – Quadrática   & 64    & 14,3  & 19    & 4,2   \\
+    Ord. – Circular     & 13    & 2,9   & 12    & 4,8   \\
+    Ord. - Livre        & 38    & 8,5   & 3     & 0,7   \\
+    Agrp. – 1 Grupo     & 55    & 12,2  & 8     & 1,8   \\
+    Agrp. – N-Grupos    & 98    & 21,8  & 22    & 4,9   \\
+    Cálculo             & 33    & 7,3   & 111   & 24,7  \\
+    Grupos Ordenados    & 15    & 3,3   & 43    & 9,6   \\
+    Definição           & 45    & 10,0  & 75    & 16,7  \\
+    \hline
+    \textbf{Total}      & 449   & 100   & 450   & 100   \\
+    \hline
+    \end{tabular}
+    \end{table}    
+\end{frame}
+
 \section{Prompts}
 
 \begin{frame}{Prompts}
@@ -266,7 +290,48 @@ Campo Grande - MS}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Resultados}
+\begin{frame}{Resultados 2003 - 2009}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+        width  = \textwidth,
+        height = 6.9cm,
+        major x tick style = transparent,
+        ybar=2*\pgflinewidth,
+        bar width=14pt,
+        ymajorgrids = true,
+        symbolic x coords={Classe,Classe-Tipo,One-Shot, CoT},
+        xtick = data,
+        scaled y ticks = false,
+        enlarge x limits=0.25,
+        ymin=0,
+        ymax=100,
+        legend style={at={(0,1)}, anchor=north west, legend cell align=left,legend columns=-1},
+        nodes near coords,
+        node near coords style={xshift=0.05cm,
+        /utils/exec={\setbox0\hbox{\pgfmathprintnumber\pgfplotspointmeta}
+        \pgfmathfloattomacro{\pgfplotspointmeta}{\F}{\M}{\E}
+        \pgfmathsetmacro{\myanchor}{ifthenelse(\M*pow(10,\E-3)*2-\the\wd0>0,"east","west")}
+        %\typeout{\M,\E,\the\wd0,\mysign,\myanchor}
+        },
+        rotate=90,anchor=\myanchor,
+        /pgf/number format/.cd,fixed zerofill,precision=1},
+    ]
+        \addplot[style={black,fill=green,mark=none}]
+            coordinates {(Classe,50.56) (Classe-Tipo,62.58) (One-Shot,67.71) (CoT,83.3)};
+
+        \addplot[style={black,fill=red,mark=none}]
+             coordinates {(Classe,49.44) (Classe-Tipo,22.72) (One-Shot,16.70) (CoT,06.01)};
+
+        \addplot[style={black,fill=yellow,mark=none}]
+             coordinates {(Classe-Tipo,14.70) (One-Shot,15.59) (CoT,10.69)};
+
+        \legend{Acertos, Erros,Acertos parciais}
+    \end{axis}
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Resultados 2023 - 2024}
     \centering
     \begin{tikzpicture}
         \begin{axis}[
@@ -291,7 +356,7 @@ Campo Grande - MS}
         %\typeout{\M,\E,\the\wd0,\mysign,\myanchor}
         },
         rotate=90,anchor=\myanchor,
-        /pgf/number format/.cd,fixed zerofill,precision=2},
+        /pgf/number format/.cd,fixed zerofill,precision=1},
     ]
         \addplot[style={black,fill=green,mark=none}]
             coordinates {(Classe,47.33) (Classe-Tipo,27.11) (One-Shot,60.89) (CoT,72.89)};
