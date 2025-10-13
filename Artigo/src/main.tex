@@ -63,24 +63,26 @@ CoT prompting é a técnica que força uma LLM executar a tarefa com um foco mai
 \section{Classificação das Questões} \label{sec:class}
 Como abordado no livro Jogos de Lógicas \cite{book1}, as questões podem ser classificadas em "Classes", que determinam a utilização das variáveis apresentadas na questão, e cada classe possui um conjunto de "Tipos" que determinam o tipo de restrição que será aplicada as variáveis da questão.
 
+\subsection{Ordenação}
+
 \begin{itemize}
-    \item Ordenação: Envolve posicionar elementos em uma sequência específica relativa a algum sistema. Os tipos dessa classe são:
+    \item \textbf{Ordenação:} Envolve posicionar elementos em uma sequência específica relativa a algum sistema. Os tipos dessa classe são:
     \begin{itemize}
-        \item Linear: Lidam com uma única estrutura linear;
-        \item Quadrática: Lidam com uma ou mais estruturas lineares sobrepostas;
-        \item Circular:  Lidam com uma estrutura em que as extremidades se encontram;
-        \item Lidam com uma estrutura não definida ou que se assemelha a um grafo.
+        \item \textbf{Linear:} Lidam com uma única estrutura linear;
+        \item \textbf{Quadrática:} Lidam com uma ou mais estruturas lineares sobrepostas;
+        \item \textbf{Circular:}  Lidam com uma estrutura em que as extremidades se encontram;
+        \item \textbf{Livre:} Lidam com uma estrutura não definida ou que se assemelha a um grafo.
     \end{itemize}
-    \item Agrupamento: Divide elementos em grupos com base em características ou condições específicas. Os tipos dessa classe são:
+    \item \textbf{Agrupamento:} Divide elementos em grupos com base em características ou condições específicas. Os tipos dessa classe são:
     \begin{itemize}
-        \item 1 Grupo: Elementos pertencem a um único grupo com regras condicionais;
-        \item N-Grupos: Elementos são divididos em dois ou mais grupos, frequentemente envolvendo regras de combinação e posição.
+        \item \textbf{1 Grupo:} Elementos pertencem a um único grupo com regras condicionais;
+        \item \textbf{N-Grupos:} Elementos são divididos em dois ou mais grupos, frequentemente envolvendo regras de combinação e posição.
     \end{itemize}
-    \item Outros: Inclui questões não contempladas nas classes anteriores, que podem combinar elementos de ordenação e agrupamento, ou que requerem cálculos matemáticos ou leitura e resolução de diagramas. Os tipos dessa classe são:
+    \item \textbf{Outros:} Inclui questões não contempladas nas classes anteriores, que podem combinar elementos de ordenação e agrupamento, ou que requerem cálculos matemáticos ou leitura e resolução de diagramas. Os tipos dessa classe são:
     \begin{itemize}
-        \item Cálculo: Dependem exclusivamente de um cálculo envolvendo as variáveis do “Cenário”;
-        \item Grupos Ordenados: Combinam as propriedades de Ordenação com as de Agrupamento;
-        \item Definição (Dedução): Apresentam algum conjunto de regras lógicas que devem ser seguidas ou algum conceito para encontrar a solução.
+        \item \textbf{Cálculo:} Dependem exclusivamente de um cálculo envolvendo as variáveis do “Cenário”;
+        \item \textbf{Grupos Ordenados:} Combinam as propriedades de Ordenação com as de Agrupamento;
+        \item \textbf{Definição (Dedução):} Apresentam algum conjunto de regras lógicas que devem ser seguidas ou algum conceito para encontrar a solução.
     \end{itemize}
 \end{itemize}
 
@@ -89,7 +91,7 @@ Como abordado no livro Jogos de Lógicas \cite{book1}, as questões podem ser cl
 Para assegurar que o prompt escrito fosse eficaz no auxilio da classificação das questões, os seguintes passos foram seguidos:
 
 \subsection{Análise manual do dataset}
-Inicialmente foi realizada uma revisão e análise manual das questões de dois períodos de 2003 a 2009 e 2020 a 2024, com o intuito de entender os critérios de classificação, verificar alterações drásticas na estrutura das questões entres os dois períodos e avaliar a necessidade de alguma classe ou tipo novo para a classificação.
+Inicialmente foi realizada uma revisão e análise manual de todas as questões disponíveis até 2024, com o intuito de entender os critérios de classificação, verificar alterações drásticas na estrutura das questões ao longo das edições e avaliar a necessidade de alguma classe ou tipo novo para a classificação.
 
 \subsubsection{Estrutura das questões}
 Durante a revisão inicial das questões foi observado que ao longo das aplicações da OBI pouco foi alterado em relação ao formato das questões, então podemos identificar uma estrutura básica:
@@ -113,7 +115,7 @@ Durante a revisão inicial das questões foi observado que ao longo das aplicaç
     \end{itemize}
 
 \subsection{Escrita do prompt para a identificação das questões}
-Uma vez definido a estrutura base de uma questão da OBI e o escopo da análise, que compreendia todas as provas do período de 2023 a 2024, escreveu-se um prompt zero-shot capaz de reconhecer as diferentes partes de uma questão e avaliar apenas a classe da questão com base nas partes reconhecidas. O prompt foi executado em um ambiente de memória temporária, a fim de não interferir com resultados posteriores. O resultado foi registrado e comparado com a análise manual.
+Uma vez definido a estrutura base de uma questão da OBI e o escopo da análise, que compreendia todas as provas nos período de 2003 a 2009 e 2023 a 2024, escrevemos um prompt zero-shot capaz de reconhecer as diferentes partes de uma questão e avaliar apenas a classe da questão com base nas partes reconhecidas. O prompt foi executado em um ambiente de memória temporária utilizando o modelo GPT-4o, a fim de não interferir com resultados posteriores. O resultado foi registrado e comparado com a análise manual.
 
 O prompt continha uma explicação dos itens que consistiam uma questão e uma breve descrição da definição das classes.
 
