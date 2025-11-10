@@ -11,7 +11,7 @@ Este repositório reúne todo o material referente ao nosso Trabalho de Conclus�
 
 ## Índice
 
-- [Artigo](Artigo/TCC.pdf)
+- [Artigo](Artigo/CoT%20para%20OBI.pdf)
 - [Slides](Slides/TCC___Slides.pdf)
 - [Dados de Classificação](src/Classificações/)
 - [Prompts](src/Prompts/)
