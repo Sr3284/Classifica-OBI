@@ -7,6 +7,7 @@
 \usepackage[brazil]{babel}
 %\usepackage[latin1]{inputenc}%
 \usepackage[hyphens]{url}
+\usepackage{float}
      
 \sloppy
 
@@ -30,7 +31,7 @@
 \end{abstract}
      
 \begin{resumo} 
-  Este artigo foca em uma análise da estrutura das questões da OBI na modalidade iniciação e como podemos utilizar Chain-of-thought prompting para a classificação das questões, particularmente para entendermos se os materiais de estudo atuais disponíveis são compatíveis com as provas mais recentes.
+  Este artigo foca em uma análise da estrutura das questões da OBI (Olímpiada Brasileira de Informática) na modalidade iniciação e como podemos utilizar Chain-of-thought prompting para a classificação das questões, particularmente para entendermos se os materiais de estudo atuais disponíveis são compatíveis com as provas mais recentes.
 \end{resumo}
 
 
@@ -141,24 +142,25 @@ Após a comparação com a análise manual, o prompt zero-shot foi modificado re
 \subsection{Aplicação de exemplos de classe - tipo}
 A próxima etapa foi a inserção de exemplos de questões classificadas em cada tipo no prompt. Foi realizada uma escolha cuidadosa no exemplo escolhido em cada tipo para que não acontecesse ambiguidade no entendimento das classificações. Os dados foram coletados e o resultado foi comparado com os resultados dos passos anteriores. Para o auxilio de questões onde as regras eram apenas recursos visuais introduzimos a utilização de palavras-chaves, de forma que a classificação pudesse ocorrer mesmo apenas com o texto do cenário.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=.9\textwidth]{modelosparapublicaodeartigos/Template_SBC/template-latex/4-4.PNG}
 \caption{Excerto do prompt One-Shot}
 \label{fig:oneshot}
 \end{figure}
 
-\subsection{Utilização do chain-of-thought prompting}
-Por fim, foi escrita a versão do prompt contendo CoT, adicionando a linha de pensamento de classificação dos exemplos de cada tipo. Os dados foram comparados com os outros até então obtidos. A Figura~\ref{fig:CoT} utiliza como base a questão da Figura~\ref{fig:oneshot}.
+\newpage
 
-\begin{figure}[h!]
+\subsection{Utilização do chain-of-thought prompting}
+Por fim, foi escrita a versão do prompt contendo CoT, adicionando a linha de pensamento de classificação dos exemplos de cada tipo. Os dados foram comparados com os outros até então obtidos.
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=.9\textwidth]{modelosparapublicaodeartigos/Template_SBC/template-latex/4-5.PNG}
 \caption{Excerto do prompt CoT}
 \label{fig:CoT}
 \end{figure}
 
-\newpage
 \section{Resultados}
 
 \subsection{Desempenho dos prompts}
@@ -167,7 +169,7 @@ Por fim, foi escrita a versão do prompt contendo CoT, adicionando a linha de pe
     
     A Tabela~\ref{tab:classes-tipos-periodos}, contém a quantidade de questões por tipo nos dois períodos classificados manualmente, podemos ver que no primeiro período a distribuição dos tipos de questão era mais uniforme, enquanto no segundo questões do tipo ordenação linear, cálculo e definição eram mais frequentes.
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Distribuição dos tipos de questões por período.}
 \label{tab:classes-tipos-periodos}
@@ -195,14 +197,14 @@ Definição           & 45    & 10,0  & 75    & 16,7  \\
     Outro ponto importante a considerar é a presença de imagens na questão, questões que são parcialmente ou completamente dependentes de imagens são na maioria das vezes ou classificadas como "outros - definição" ou classificadas de forma errada, já que o modelo não lida tão bem com o contexto apresentado em formato de imagem.
 
 
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
 \includegraphics[width=.9\textwidth]{modelosparapublicaodeartigos/Template_SBC/template-latex/chart2003.PNG}
 \caption{Gráfico de resultado da classificação das provas de 2003 a 2009}
 \label{fig:chart2003}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[h]
 \centering
 \includegraphics[width=.9\textwidth]{modelosparapublicaodeartigos/Template_SBC/template-latex/chart2023.PNG}
 \caption{Gráfico de resultado da classificação das provas de 2023 a 2024}
