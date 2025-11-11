@@ -1,5 +1,11 @@
+// Classifica todas as quesões da prova e exporta classificação em .csv - (Zero-shot)
+Com base na definição de questão fornecida e as classes apresentadas, classifique todas as questões da prova e retorne um csv com os campos: "Nome do cenário", "Número da questão" e "Classe".
+
 // Classifica todas as quesões da prova e exporta classificação em .csv
 Com base na definição de questão fornecida e as classes apresentadas, classifique todas as questões da prova e retorne um csv com os campos: "Nome do cenário", "Número da questão", "Classe" e "Tipo".
+
+// Avalia um único cenário da prova e mostra o raciocíno - (Zero-shot)
+Com base na definição de questão fornecida e as classes apresentadas, classifique as perguntas do cenário <Nome do Cenário> e apresente o desenvolvimento e critérios para essa classificação. Para cada pergunta deve ser apresentado o campo "Número da questão", um breve resumo do enunciado da pergunta, "Classe" e uma explicação da classificação.
 
 // Avalia um único cenário da prova e mostra o raciocíno
 Com base na definição de questão fornecida e as classes apresentadas, classifique as perguntas do cenário <Nome do Cenário> e apresente o desenvolvimento e critérios para essa classificação. Para cada pergunta deve ser apresentado o campo "Número da questão", um breve resumo do enunciado da pergunta, "Classe", "Tipo" e por fim o raciocínio da classificação de acordo com a classificação de exemplo.
