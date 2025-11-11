@@ -21,7 +21,3 @@ Outros: Inclui questões não se enquadram nas classes anteriores, que podem com
    - Cálculo: Dependem exclusivamente de um cálculo envolvendo as variáveis do “Cenário”;
    - Grupos Ordenados: Combinam as propriedades de Ordenação com as de Agrupamento;
    - Definição: Apresenta algum conjunto de regras lógicas que devem ser seguidas para encontrar a solução.
-
-
-Toda questão deve ter sua classificação no formato "Classe - Tipo".
-
