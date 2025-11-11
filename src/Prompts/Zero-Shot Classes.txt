@@ -12,6 +12,3 @@ Ordenação: Envolve posicionar elementos em uma sequência específica.
 Agrupamento: Divide elementos em grupos com base em características ou condições específicas.
 
 Outros: Inclui questões que combinam elementos de ordenação e agrupamento ou que requerem cálculos matemáticos.
-
-
-Com base na classificação fornecida, classifique cada questão da prova 
