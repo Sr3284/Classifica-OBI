@@ -8,17 +8,27 @@
 \institute{FACOM \\
 UFMS \\
 Campo Grande - MS}
-\date{}
+\date{\today}
 
 \begin{document}
 \begin{backgroundblock}{0mm}{-10mm}
    \includegraphics[width=\paperwidth]{Figures/Modelo-Slides-FACOM.pdf}
 \end{backgroundblock}
 
+\DTMsetstyle{portuges}
 \maketitle
 
-\section{Introdução}
-\begin{frame}{Introdução}
+\begin{frame}
+    \begin{enumerate}
+        \item Contextualização e Objetivos
+        \item Metodologia
+        \item Resultados
+        \item Conclusão
+    \end{enumerate}
+\end{frame}
+
+\section{Contextualização e Objetivos}
+\begin{frame}{Contextualização e Objetivos}
     \begin{columns}
         \column{0.5\textwidth}
             \centering
@@ -46,8 +56,8 @@ Campo Grande - MS}
     \end{columns}
 \end{frame}
 
-\section{Estrutura da prova}
-\begin{frame}{Estrutura da prova}
+\section{Metodologia}
+\begin{frame}{Sobre as provas}
     \begin{itemize}
         \item Diferenças entre edições das olimpíadas
     \end{itemize}
@@ -78,183 +88,60 @@ Campo Grande - MS}
     \end{columns}
 \end{frame}
 
-\section{Classificações}
 \begin{frame}{Classes e Tipos}
     \begin{columns}
         \column{0.3\textwidth}
             \begin{itemize}
-                \item Ordenação
+                \item<1-> Ordenação
                 \begin{itemize}
-                    \item Linear
-                    \item Quadrática
-                    \item Circular
-                    \item Livre
+                    \item<2-> Linear
+                    \item<2-> Quadrática
+                    \item<2-> Circular
+                    \item<2-> Livre
                 \end{itemize}
             \end{itemize}
         \column{0.3\textwidth}
             \begin{itemize}
-                \item Agrupamento
+                \item<1-> Agrupamento
                 \begin{itemize}
-                    \item 1-Grupo
-                    \item n-Grupos
+                    \item<3-> 1-Grupo
+                    \item<3-> n-Grupos
                     \item[]
                     \item[] 
                 \end{itemize}
             \end{itemize}
         \column{0.4\textwidth}
             \begin{itemize}
-                \item Outros
+                \item<1-> Outros
                 \begin{itemize}
-                    \item Cálculo
-                    \item Grupos Ordenados
-                    \item Definição
+                    \item<4-> Grupos Ordenados
+                    \item<4-> Cálculo
+                    \item<4-> Definição
                 \end{itemize}
             \end{itemize}
     \end{columns}
 \end{frame}
 
-\begin{frame}{Ordenação Linear}
-
-    \begin{columns}
-        \column{0.6\textwidth}
-            \small{OBI2007 --- nível 2, fase 2 \\ Numa corrida de fórmula 1 estão participando exatamente sete pilotos: P, Q, R, S, T, U e V. Todos sempre chegam ao fim da corrida e não existe empates entre posições de chegada.}
-
-        \column{0.4\textwidth}
-            \begin{itemize}
-                \item V sempre termina a corrida na frente de P.
-                \item P sempre termina a corrida na frente de Q.
-                \item Ou R termina a corrida em primeiro e T em último lugar, ou S termina em primeiro e U ou Q termina em último
-            \end{itemize}
-    \end{columns}
+\begin{frame}{Cinco princípios de prompting}
+    \begin{itemize}
+        \item[1.] Dar direção
+        \item[2.] Especificar Formato
+        \item[3.] Providenciar Exemplos
+        \item[4.] Avaliar Qualidade
+        \item[5.] Dividir o Trabalho
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Ordenação Quadrática}
-    \begin{columns}
-        \column{0.6\textwidth}
-            \small{OBI2005 --- fase 01, nível 2 \\ O diretor de uma escola está planejando a utilização do laboratório de computação para a semana de provas práticas. As provas ocorrerão entre os dias 1 e 5 (inclusive) do último mês de aulas, com duas provas agendadas para cada dia. Das dez provas que serão agendadas, quatro são do prof. Rui, duas da profa. Sônia, duas do prof. Téo, um do prof. Udo e uma da profa. Vera. As provas devem ser agendadas obedecendo ás seguintes restrições:}
-
-        \column{0.4\textwidth}
-            \begin{itemize}
-                \item \small{duas provas de um mesmo professor ou professora não podem ser agendadas para o mesmo dia, exceto para o dia 3, quando serão agendadas duas provas do prof. Rui;}
-                \item \small{a prova da profa. Vera será agendada para o dia 5;}
-                \item \small{nenhuma prova da profa. Sônia pode ser agendada para o mesmo dia de uma prova do prof. Rui.}
-            \end{itemize}
-    \end{columns}
+\begin{frame}{Prompts}
+    \begin{itemize}
+        \item[1.]<1-> Zero-shot com apenas classes
+        \item[2.]<2-> Zero-shot com classes e tipos
+        \item[3.]<3-> One-shot
+        \item[4.]<4-> Chain-of-Thoughts
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Ordenação Circular}
-    \begin{columns}
-        \column{0.4\textwidth}
-            \small{OBI2005 --- fase 01, nível 1 \\ Uma florista está arranjando oito flores (A, B, C, D, E, F, G, J, K e L) em oito vasos colocados em formato de círculo, como mostrado abaixo:}
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.5]{Figures/exemplos/circu.PNG}
-                \label{fig:OLivre}
-            \end{figure}
-        \column{0.6\textwidth}
-            \begin{itemize}
-                \item \small{A, B e C são lírios; F e G são margaridas; J, K e L são rosas;}
-                \item \small{apenas uma flor deve ser colocada em cada vaso;}
-                \item \small{lírios devem ser colocados em vasos vizinhos;}
-                \item \small{rosas devem ser colocadas em vasos vizinhos;}
-                \item \small{nenhum lírio pode ser colocado em vaso vizinho a um vaso de rosa;}
-                \item \small{a flor F deve ser colocada no vaso 5;}
-                \item \small{a flor A deve ser colocada no vaso 2;}
-                \item \small{se F for colocada em vaso vizinho a J, então o outro vaso vizinho de F não pode conter C.}
-            \end{itemize}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{Ordenação Livre}
-    \begin{columns}
-        \column{0.6\textwidth}
-            \small{OBI2006 --- fase 02, nível 2 \\ Uma fazenda no pantanal, de terras totalmente planas, tem quatro armazens -- A, B, C e D -- muito distantes entre si, que são ligados por quatro trilhas retas -- Q, R, S e T. As trilhas têm todas o mesmo comprimento e conectam os armazens da seguinte forma:}
-            
-        \column{0.4\textwidth}
-            \begin{itemize}
-                \item \small{Q conecta apenas A e C;}
-                \item \small{R conecta apenas B e C;}
-                \item \small{S conecta apenas A e B;}
-                \item \small{T conecta apenas B e D;}
-            \end{itemize}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{Agrupamento 1-Grupo}
-    \begin{columns}
-        \column{0.6\textwidth}
-            \small{OBI-2006 --- fase 02, nível 1 \\ Clara está carregando músicas em seu predendor de cabelo, que funciona também como um tocador MP3. O tocador é capaz de armazenar exatamente três músicas longas -- entre C, D e F -- ou exatamente seis músicas curtas -- entre H, J, K, L, P e Q. Cada música curta ocupa exatamente metade da memória de uma música longa. Clara usa toda a memória disponível. As seguintes restrições devem ser obedecidas:}
-            
-        \column{0.4\textwidth}
-            \begin{itemize}
-                \item \small{Se J é carregada, então L é carregada.}
-                \item \small{Se C é carregada, então K não é carregada;}
-                \item \small{Se L é carregada, então C é carregada;}
-                \item \small{Se ou P ou D são carregadas, então ambas são carregadas;}
-                \item  \small{Se C é carregada, então Q é carregada;}
-                \item \small{Se F é carregada, então D não é carregada.}
-            \end{itemize}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{Agrupamento n-Grupos}
-    \begin{columns}
-        \column{0.5\textwidth}
-            \small{OBI-2009 --- fase 01, nível 02 \\ Sete estudantes devem escolher em quais cursos universitários irão se matricular. Quatro estudantes são homens, J, K, L e M. Três estudantes são mulheres, X, Y e Z. Cada estudante deve se matricular em um e somente um curso superior dos quatros seguintes: CC diurno, CC noturno, EC diurno ou EC noturno. No mínimo um estudante deve se matricular em cada curso e as seguintes regras também são aplicadas:}
-            
-        \column{0.5\textwidth}
-            \begin{itemize}
-                \item \small{Se K se matricula no curso de CC, então L e X também se matriculam em CC, mas não necessariamente no mesmo período;}
-                \item \small{Se M se matricula no curso de EC, então Y se matricula no curso de EC noturno;}
-                \item \small{Y e Z devem se matricular no mesmo curso;}
-                \item \small{No mínimo dois homens devem se matricular no curso de EC diurno;}
-                \item  \small{Nenhuma mulher se matriculou no curso de CC diurno.}
-            \end{itemize}
-    \end{columns}   
-\end{frame}
-
-\begin{frame}{Outros: Cálculo}
-    OBI-2009 --- fase 01, nível 02 \\
-    Um banco possui 3 caixas, A, B e C, para atender aos seus clientes. O caixa A atende 2 clientes por minuto, o caixa B atende 1,5 clientes por minuto, e o caixa C atende 0,5 clientes por minuto. Inicialmente os caixas não estão atendendo ninguém e a fila de clientes está com 100 pessoas.
-\end{frame}
-
-\begin{frame}{Outros: Grupos Ordenados}
-    \begin{columns}
-        \column{0.65\textwidth}
-            \small{OBI-2008 --- fase 02, nível 01 \\ Num período de três dias, de segunda a quarta, três estudantes devem estudar exatamente três dos seis livros recomendados pelo professor para se preparar para a prova de Matemática. Os livros são numerados de 1 a 6, de acordo com seus número de páginas, sendo 1 o mais fino e 6 o mais grosso. Nenhum livro tem o mesmo número de páginas. Os estudantes devem estudar um livro por dia. Cada livro é estudado por no mínimo um estudante, mas não é estudado por mais de dois estudantes, e nenhum estudante pode estudar um livro mais fino que um livro que ele estudou anteriormente. As seguintes condições também se aplicam:}
-            
-        \column{0.35\textwidth}
-            \begin{itemize}
-                \item \small{Na terça, A deve estudar o livro que B estudou na segunda;}
-                \item \small{B estuda o livro 4 na terça;}
-                \item \small{C não estuda o livro 4;}
-                \item \small{O livro que C estuda na quarta tem o mesmo número de páginas ou é mais fino que o livro que B estuda na quarta;}
-            \end{itemize}
-    \end{columns}   
-\end{frame}
-
-\begin{frame}{Outros: Definição}
-    \begin{columns}
-        \column{0.6\textwidth}
-            \small{OBI-2006 --- fase 02, nível 01 \\ O índice de complexidade de um rio é calculado da seguinte maneira:}
-
-            \begin{itemize}
-                \item \small{Se o rio não tem afluente, o seu índice de complexidade é 1;}
-                \item \small{Se o rio tem afluente de índices diferentes, então o seu índice de complexidade é igual ao do afluente de maior índice;}
-                \item \small{Se todos os afluentes do rio têm o mesmo índice H de complexidade (incluindo o caso quando há apenas um afluente), o seu índice será H + 1.}
-            \end{itemize}
-            
-        \column{0.4\textwidth}
-            Por exemplo, o rio principal da figura abaixo(representado por uma linha mais grossa) tem índice de complexidade 2.
-
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.7\linewidth]{Figures/exemplos/rio.PNG}
-                \label{fig:rio}
-            \end{figure}
-    \end{columns}   
-\end{frame}
-
+\section{Resultados}
 \begin{frame}{Distribuição das questões}
     \begin{table}[h]
     \centering
@@ -277,27 +164,6 @@ Campo Grande - MS}
     \hline
     \end{tabular}
     \end{table}    
-\end{frame}
-
-\section{Prompts}
-
-\begin{frame}{Cinco princípios de prompting}
-    \begin{itemize}
-        \item[1.] Dar direção
-        \item[2.] Especificar Formato
-        \item[3.] Providenciar Exemplos
-        \item[4.] Avaliar Qualidade
-        \item[5.] Dividir o Trabalho
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Prompts}
-    \begin{itemize}
-        \item[1.] Zero-shot com apenas classes
-        \item[2.] Zero-shot com classes e tipos
-        \item[3.] One-shot
-        \item[4.] Chain-of-Thoughts
-    \end{itemize}
 \end{frame}
 
 \begin{frame}{Resultados 2003 - 2009}
@@ -382,7 +248,6 @@ Campo Grande - MS}
     \end{tikzpicture}
 \end{frame}
 
-\section{Problemas encontrados}
 \begin{frame}{Problemas encontrados}
     \begin{columns}
         \column{0.5\textwidth}
@@ -400,8 +265,8 @@ Campo Grande - MS}
     \end{columns}
 \end{frame}
 
-\section{Considerações finais}
-\begin{frame}
+\section{Conclusão}
+\begin{frame}{Trabalhos futuros}
     \begin{itemize}
         \item Melhoria da precisão do prompt
         \item Modificações para permitir tratamento de imagens
@@ -409,10 +274,20 @@ Campo Grande - MS}
     \end{itemize}
 \end{frame}
 
+\begin{frame}{}
+    \begin{center}
+        \vfill
+        {\Large\bf \url{https://github.com/Sr3284/Classifica-OBI}}\\
+        \vfill
+    \end{center}
+\end{frame}
+
 \begin{frame}
     \begin{center}
         \vfill
-        {\Large \bf Obrigado!}\\
+        {\Large \bf Obrigado pela atenção}\\
+        \vfill
+        {\small Ficamos a disposição para dúvidas, críticas e sugestões}\\
         \vfill
     \end{center}
 \end{frame}
